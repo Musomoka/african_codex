@@ -1,0 +1,28 @@
+
+<h1>Listing research_papers</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @research_papers.each do |research_paper| %>
+  <tr>
+  	<td><%= research_paper.title %></td>
+    <td><%= research_paper.author %></td>
+    <td><%= research_paper.instituition %></td>
+    <td><%= research_paper.abstract %></td>
+    <td><%= research_paper.paper %></td>
+    <td><%= link_to 'Show', research_paper %></td>
+    <td><%= link_to 'Edit', edit_research_paper_path(research_paper) %></td>
+    <td><%= link_to 'Destroy', research_paper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Research paper', new_research_paper_path %>
+
